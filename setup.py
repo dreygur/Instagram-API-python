@@ -1,5 +1,8 @@
 from setuptools import setup
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
 setup(
     name='InstagramAPI',
     version='1.0.2',
@@ -10,8 +13,6 @@ setup(
     license='GNU',
     packages=['InstagramAPI'],
     zip_safe=False,
-    install_requires=[
-        "requests==2.11.1",
-        "requests-toolbelt==0.7.0",
-        "moviepy==0.2.3.2"
-    ])
+    install_requires=requirements,
+    python_requires='>=3.6'
+)
